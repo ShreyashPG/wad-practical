@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Todo List</title>
+    <style>
+        body { max-width: 500px; margin: 20px auto; font-family: Arial; }
+        .todo-input { width: 70%; padding: 8px; }
+        .todo-btn { padding: 8px 15px; background: #4CAF50; color: white; border: none; }
+        .todo-list { list-style: none; padding: 0; }
+        .todo-item { display: flex; gap: 8px; align-items: center; margin: 5px 0; padding: 8px; background: #f9f9f9; }
+        .todo-text { flex: 1; }
+        .edit-input { flex: 1; display: none; }
+        button { padding: 4px 8px; border: none; cursor: pointer; }
+        .delete-btn { background: #ff4444; color: white; }
+        .edit-btn { background: #ffc107; }
+    </style>
+</head>
+<body>
+    <input class="todo-input" placeholder="New todo">
+    <button class="todo-btn" onclick="addTodo()">Add</button>
+    <ul class="todo-list" id="list"></ul>
+
+<script>
+let todos = JSON.parse(localStorage.todos || '{}');
+
+function render() {
+    document.getElementById('list').innerHTML = Object.entries(todos).map(([id, text]) => `
+        <li class="todo-item" data-id="${id}">
+            <span class="todo-text">${text}</span>
+            <input class="edit-input" value="${text}">
+            <button class="edit-btn" onclick="startEdit('${id}')">Edit</button>
+            <button class="delete-btn" onclick="deleteTodo('${id}')">×</button>
+        </li>
+    `).join('');
+}
+
+function addTodo() {
+    const input = document.querySelector('.todo-input');
+    if (input.value) {
+        todos[Date.now()] = input.value;
+        input.value = '';
+        save();
+        render();
+    }
+}
+
+function deleteTodo(id) {
+    delete todos[id];
+    save();
+    render();
+}
+
+function startEdit(id) {
+    const item = document.querySelector(`[data-id="${id}"]`);
+    const text = item.querySelector('.todo-text');
+    const input = item.querySelector('.edit-input');
+    
+    text.style.display = 'none';
+    input.style.display = 'block';
+    input.focus();
+    
+    input.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter' && input.value.trim()) {
+            todos[id] = input.value.trim();
+            save();
+            render();
+        }
+    });
+}
+
+function save() {
+    localStorage.todos = JSON.stringify(todos);
+}
+
+render();
+</script>
+</body>
+</html>

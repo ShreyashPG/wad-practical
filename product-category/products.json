@@ -1,0 +1,39 @@
+[
+    {
+      "image": "https://f.media-amazon.com/images/I/717sEAdy02L._AC_UY327_FMwebp_QL65_.jpg",
+      "name": "Product 1",
+      "price": "$10",
+      "description": "Description for Product 1"
+    },
+    {
+      "image": "https://f.media-amazon.com/images/I/81GhaMvvHTL._AC_UY327_FMwebp_QL65_.jpg",
+      "name": "Product 2",
+      "price": "$20",
+      "description": "Description for Product 2"
+    },
+    {
+      "image": "https://f.media-amazon.com/images/I/31TEA0qrUBL._SY445_SX342_QL70_FMwebp_.jpg",
+      "name": "Product 3",
+      "price": "$30",
+      "description": "Description for Product 3"
+    },
+    {
+      "image": "https://f.media-amazon.com/images/I/81bQaAhgpFL._AC_UY327_FMwebp_QL65_.jpg",
+      "name": "Product 4",
+      "price": "$40",
+      "description": "Description for Product 4"
+    },
+    {
+      "image": "https://f.media-amazon.com/images/I/71yVqjq0aeL._AC_UY327_FMwebp_QL65_.jpg",
+      "name": "Product 5",
+      "price": "$50",
+      "description": "Description for Product 5"
+    },
+    {
+      "image": "https://f.media-amazon.com/images/I/51izGKpbXOL._AC_UY327_FMwebp_QL65_.jpg",
+      "name": "Product 6",
+      "price": "$60",
+      "description": "Description for Product 6"
+    }
+  ]
+  

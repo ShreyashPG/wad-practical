@@ -1,0 +1,91 @@
+/* Basic styles */
+body {
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Product table structure */
+.product-table {
+    width: 80%;
+    margin-top: 20px;
+}
+
+/* Table header */
+.table-header {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* Product rows container */
+.table-body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Individual product row */
+.product-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    align-items: center;
+}
+
+/* Product cell styling */
+.product-row > div {
+    text-align: center;
+    padding: 10px;
+}
+
+.product-image img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+/* Pagination controls */
+.pagination-controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 15px;
+    align-items: center;
+}
+
+.pagination-controls button {
+    padding: 8px 16px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+}
+
+.pagination-controls button:hover {
+    background-color: #0056b3;
+}
+
+.page-number-span {
+    font-size: 18px;
+    min-width: 30px;
+    text-align: center;
+}

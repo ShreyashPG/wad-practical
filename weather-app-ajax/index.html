@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f0f8ff;
+        }
+
+        .weather-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            width: 200px;
+            margin-right: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .weather-info {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="weather-container">
+        <h1>Weather App</h1>
+        <input type="text" id="cityInput" placeholder="Enter city name">
+        <button onclick="getWeather()">Get Weather</button>
+        <div id="weatherInfo" class="weather-info"></div>
+    </div>
+
+    <script>
+        // Local weather data repository
+        const weatherData = {
+            'London': {
+                temperature: 18,
+                humidity: 65,
+                conditions: 'Partly Cloudy'
+            },
+            'Paris': {
+                temperature: 22,
+                humidity: 70,
+                conditions: 'Sunny'
+            },
+            'New York': {
+                temperature: 15,
+                humidity: 80,
+                conditions: 'Rainy'
+            },
+            'Tokyo': {
+                temperature: 25,
+                humidity: 60,
+                conditions: 'Clear'
+            }
+        };
+
+        function getWeather() {
+            const cityInput = document.getElementById('cityInput');
+            const weatherInfo = document.getElementById('weatherInfo');
+            const city = cityInput.value.trim().toLowerCase().replace(/(?:^|\s)\S/g, a => a.toUpperCase());
+
+            // Clear previous results
+            weatherInfo.innerHTML = '';
+            cityInput.value = '';
+
+            // Simulate AJAX call with local data
+            setTimeout(() => {
+                if (weatherData[city]) {
+                    const data = weatherData[city];
+                    const html = `
+                        <h2>Weather in ${city}</h2>
+                        <p>Temperature: ${data.temperature}°C</p>
+                        <p>Humidity: ${data.humidity}%</p>
+                        <p>Conditions: ${data.conditions}</p>
+                    `;
+                    weatherInfo.innerHTML = html;
+                    weatherInfo.style.backgroundColor = '#e8f5e9';
+                } else {
+                    weatherInfo.innerHTML = `<p>City not found in our database</p>`;
+                    weatherInfo.style.backgroundColor = '#ffebee';
+                }
+            }, 500); // Simulate network delay
+        }
+
+        // Add enter key support
+        document.getElementById('cityInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                getWeather();
+            }
+        });
+    </script>
+</body>
+</html>

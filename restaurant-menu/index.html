@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABC Delights - Restaurant Menu</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #fff5e6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 0;
+            background-color: #8b0000;
+            color: white;
+        }
+
+        .about-section {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            margin: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .highlight-section {
+            display: flex;
+            gap: 30px;
+            margin: 30px 0;
+        }
+
+        .top-dishes, .cuisines {
+            flex: 1;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .menu-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .menu-table th {
+            background-color: #8b0000;
+            color: white;
+            padding: 15px;
+            text-align: left;
+        }
+
+        .menu-table td {
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .dish-image {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .price {
+            color: #8b0000;
+            font-weight: bold;
+        }
+
+        ol {
+            padding-left: 20px;
+            margin: 15px 0;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        li {
+            margin: 10px 0;
+            padding: 8px;
+            background-color: #fff5e6;
+            border-radius: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .highlight-section {
+                flex-direction: column;
+            }
+            
+            .dish-image {
+                width: 80px;
+                height: 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>ABC Delights</h1>
+        <p>Experience the Symphony of Flavors</p>
+    </header>
+
+    <div class="container">
+        <div class="about-section">
+            <h2>Welcome to ABC Delights</h2>
+            <p>Since 1995, we've been serving authentic dishes prepared with traditional recipes and premium ingredients. Our chef-led kitchen ensures every meal is a masterpiece of flavor and presentation.</p>
+            
+            <h3>Chef's Message</h3>
+            <p>"At ABC Delights, we blend tradition with innovation to create memorable dining experiences. Every dish tells a story of passion and culinary expertise."</p>
+            
+            <h3>Quality Assurance</h3>
+            <p>✓ Daily fresh ingredients ✓ Hygienic kitchen practices ✓ Vegetarian & Non-vegetarian options ✓ Spice level customization</p>
+        </div>
+
+        <div class="highlight-section">
+            <div class="top-dishes">
+                <h2>Our Bestsellers</h2>
+                <ol>
+                    <li>Paneer Tikka - Smoked cottage cheese marinated in spices</li>
+                    <li>Hyderabadi Biryani - Fragrant rice with tender meat</li>
+                    <li>Butter Chicken - Creamy tomato-based curry</li>
+                </ol>
+            </div>
+
+            <div class="cuisines">
+                <h2>Available Cuisines</h2>
+                <ul>
+                    <li>North Indian</li>
+                    <li>South Indian</li>
+                    <li>Chinese</li>
+                    <li>Italian</li>
+                    <li>Continental</li>
+                </ul>
+            </div>
+        </div>
+
+        <table class="menu-table">
+            <thead>
+                <tr>
+                    <th>Dish</th>
+                    <th>Description</th>
+                    <th>Image</th>
+                    <th>Price (INR)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Paneer Tikka</td>
+                    <td>Marinated cottage cheese grilled in tandoor</td>
+                    <td><img src="https://example.com/paneer-tikka.jpg" alt="Paneer Tikka" class="dish-image"></td>
+                    <td class="price">₹ 275</td>
+                </tr>
+                <tr>
+                    <td>Hyderabadi Biryani</td>
+                    <td>Authentic dum-cooked biryani with choice of meat</td>
+                    <td><img src="https://example.com/biryani.jpg" alt="Biryani" class="dish-image"></td>
+                    <td class="price">₹ 350</td>
+                </tr>
+                <tr>
+                    <td>Margherita Pizza</td>
+                    <td>Wood-fired pizza with fresh basil and mozzarella</td>
+                    <td><img src="https://example.com/pizza.jpg" alt="Pizza" class="dish-image"></td>
+                    <td class="price">₹ 399</td>
+                </tr>
+                <!-- Add more menu items -->
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

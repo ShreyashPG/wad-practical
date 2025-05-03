@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Auth System</title>
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+.form-container {
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  box-sizing: border-box;
+}
+
+button {
+  background: #4caf50;
+  color: white;
+  padding: 10px;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+}
+
+.error {
+  color: red;
+  font-size: 0.9em;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.data-table th,
+.data-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.data-table input[type="password"] {
+  border: none;
+  background: transparent;
+  width: 100%;
+}
+
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <!-- Registration Form -->
+    <form id="registerForm">
+      <h2>Register</h2>
+      <div class="form-group">
+        <input type="text" id="name" placeholder="Name" required />
+        <div class="error" id="nameError"></div>
+      </div>
+      <div class="form-group">
+        <input type="email" id="email" placeholder="Email" required />
+        <div class="error" id="emailError"></div>
+      </div>
+      <div class="form-group">
+        <input type="tel" id="mobile" placeholder="Mobile (10 digits)" pattern="[0-9]{10}" required />
+        <div class="error" id="mobileError"></div>
+      </div>
+      <div class="form-group">
+        <input type="date" id="dob" required />
+        <div class="error" id="dobError"></div>
+      </div>
+      <div class="form-group">
+        <input type="text" id="city" placeholder="City" required />
+        <div class="error" id="cityError"></div>
+      </div>
+      <div class="form-group">
+        <input type="text" id="address" placeholder="Address" required />
+        <div class="error" id="addressError"></div>
+      </div>
+      <div class="form-group">
+        <input type="text" id="username" placeholder="Username" required />
+        <div class="error" id="usernameError"></div>
+      </div>
+      <div class="form-group">
+        <input type="password" id="password" placeholder="Password (≥6 chars)" required />
+        <div class="error" id="passwordError"></div>
+      </div>
+      <button type="submit">Register</button>
+    </form>
+
+    <hr/>
+
+    <!-- Login Form -->
+    <form id="loginForm">
+      <h2>Login</h2>
+      <div class="form-group">
+        <input type="text" id="loginUser" placeholder="Username" required />
+      </div>
+      <div class="form-group">
+        <input type="password" id="loginPass" placeholder="Password" required />
+      </div>
+      <button type="submit">Login</button>
+      <div class="error" id="loginError"></div>
+    </form>
+  </div>
+
+  <!-- Data List -->
+  <div id="dataList" style="display: none;">
+    <h2>Registered Users</h2>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Mobile</th>
+          <th>City</th>
+          <th>Username</th>
+          <th>Password</th>
+        </tr>
+      </thead>
+      <tbody id="userData"></tbody>
+    </table>
+  </div>
+
+  <script>
+    // Load users from localStorage
+let users = JSON.parse(localStorage.getItem('users') || '[]');
+
+// --- Utility Validation Functions ---
+function isValidEmail(email) {
+  return /^[\w.-]+@[\w.-]+\.[A-Za-z]{2,}$/.test(email);
+}
+function isValidMobile(mobile) {
+  return /^[0-9]{10}$/.test(mobile);
+}
+function isValidPassword(pw) {
+  return pw.length >= 6;
+}
+
+// Show error message
+function showError(elem, msg) {
+  const errDiv = document.getElementById(elem.id + 'Error');
+  errDiv.textContent = msg;
+  elem.classList.add('error');
+}
+
+// Clear errors in a form
+function clearErrors(form) {
+  form.querySelectorAll('.error').forEach(el => {
+    if (el.tagName === 'DIV') el.textContent = '';
+    else el.classList.remove('error');
+  });
+}
+
+// Simulate AJAX POST (500ms delay)
+function ajaxPost(url, data) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      console.log(`POST ${url}`, data);
+      resolve();
+    }, 500);
+  });
+}
+
+// Render user data list
+function showDataList() {
+  document.querySelector('.form-container').style.display = 'none';
+  document.getElementById('dataList').style.display = 'block';
+  const tbody = document.getElementById('userData');
+  tbody.innerHTML = users.map(u => `
+    <tr>
+      <td>${u.name}</td>
+      <td>${u.email}</td>
+      <td>${u.mobile}</td>
+      <td>${u.city}</td>
+      <td>${u.username}</td>
+      <td>
+        <input type="password" value="${u.password}" readonly />
+      </td>
+    </tr>
+  `).join('');
+}
+
+// --- Registration Handler ---
+document.getElementById('registerForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  clearErrors(this);
+
+  // Gather values
+  const name     = this.name.value.trim();
+  const email    = this.email.value.trim();
+  const mobile   = this.mobile.value.trim();
+  const dob      = this.dob.value;
+  const city     = this.city.value.trim();
+  const address  = this.address.value.trim();
+  const username = this.username.value.trim();
+  const password = this.password.value;
+
+  // Validate
+  let valid = true;
+  if (!name)               { showError(this.name, 'Name is required'); valid = false; }
+  if (!isValidEmail(email))              { showError(this.email, 'Invalid email'); valid = false; }
+  if (!isValidMobile(mobile))            { showError(this.mobile, 'Must be 10 digits'); valid = false; }
+  if (!dob)                { showError(this.dob, 'DOB is required'); valid = false; }
+  if (!city)               { showError(this.city, 'City is required'); valid = false; }
+  if (!address)            { showError(this.address, 'Address is required'); valid = false; }
+  if (!username)           { showError(this.username, 'Username is required'); valid = false; }
+  if (!isValidPassword(password))        { showError(this.password, 'Min 6 characters'); valid = false; }
+  if (!valid) return;
+
+  const user = { name, email, mobile, dob, city, address, username, password };
+
+  ajaxPost('/api/register', user)
+    .then(() => {
+      users.push(user);
+      localStorage.setItem('users', JSON.stringify(users));
+      alert('Registered successfully!');
+      this.reset();
+      showDataList();
+    })
+    .catch(() => alert('Registration failed'));
+});
+
+// --- Login Handler ---
+document.getElementById('loginForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  clearErrors(this);
+  const uname = this.loginUser.value.trim();
+  const pwd   = this.loginPass.value;
+
+  const found = users.find(u => u.username === uname && u.password === pwd);
+  if (!found) {
+    document.getElementById('loginError').textContent = 'Invalid credentials';
+    return;
+  }
+
+  ajaxPost('/api/login', { username: uname, password: pwd })
+    .then(() => showDataList())
+    .catch(() => alert('Login failed'));
+});
+
+  </script>
+</body>
+</html>

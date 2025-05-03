@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<body>
+
+        <div class="main"> 
+            <header class="header">
+                <h1 class="header-title">Product Description</h1>
+            </header>
+            
+        
+                <div class="product-table">
+                    <!-- Table Header -->
+                    <div class="table-header">
+                        <div class="product-image">
+                            <span>Product Image</span>
+                        </div>
+                        <div class="product-name">
+                            <span>Product Name</span>
+                        </div>
+                        <div class="product-price">
+                            <span>Product Price</span>
+                        </div>
+                        <div class="product-description">
+                            <span>Product Description</span>
+                        </div>
+                    </div>
+                    <!-- Product Rows Container -->
+                    <div class="table-body" id="product-rows-container"></div>
+                </div>
+                <div class="pagination-controls">
+                    <button onclick="handlePreviousPage()">Previous</button>
+                    <span class="page-number-span">1</span>
+                    <button onclick="handleNextPage()">Next</button>
+                </div>
+        </div>
+
+   
+    <script src="script.js"></script>
+</body>
+</html>
