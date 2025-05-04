@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Movie Reviews</title>
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <style>
+        .movie-card { margin: 15px 0; border-radius: 10px; }
+        .movie-poster { max-width: 100%; height: auto; display: block; margin: 0 auto; }
+        .genre-tag { 
+            background: #4CAF50; 
+            color: white; 
+            padding: 4px 8px;
+            border-radius: 5px;
+            display: inline-block;
+            margin: 5px 0;
+        }
+        .review-text { color: #666; line-height: 1.5; }
+    </style>
+</head>
+<body>
+
+<div data-role="page" id="home">
+    <div data-role="header">
+        <a href="#" class="ui-btn ui-icon-home ui-btn-icon-left">Home</a>
+        <h1>Latest Movie Reviews</h1>
+    </div>
+
+    <div data-role="main" class="ui-content">
+        <!-- Movie 1 -->
+        <div class="ui-corner-all movie-card" data-role="collapsible" data-inset="false">
+            <h3>Inception (2010) <span class="genre-tag">Sci-Fi/Thriller</span></h3>
+            <img src="https://source.unsplash.com/800x1200/?inception,movie" class="movie-poster" alt="Inception Poster">
+            <p><strong>Summary:</strong> A thief who enters the dreams of others to steal secrets is given a final chance at redemption.</p>
+            <div class="review-text">
+                <h4>Review:</h4>
+                <p>A mind-bending masterpiece that combines stunning visuals with complex storytelling. Nolan's direction keeps you engaged from start to finish.</p>
+            </div>
+        </div>
+
+        <!-- Movie 2 -->
+        <div class="ui-corner-all movie-card" data-role="collapsible" data-inset="false">
+            <h3>Parasite (2019) <span class="genre-tag">Thriller/Drama</span></h3>
+            <img src="https://source.unsplash.com/800x1200/?parasite,movie" class="movie-poster" alt="Parasite Poster">
+            <p><strong>Summary:</strong> A poor family schemes to become employed by a wealthy household.</p>
+            <div class="review-text">
+                <h4>Review:</h4>
+                <p>A brilliant social satire that masterfully blends dark comedy with suspense. The first foreign language film to win Best Picture at the Oscars.</p>
+            </div>
+        </div>
+
+        <!-- Movie 3 -->
+        <div class="ui-corner-all movie-card" data-role="collapsible" data-inset="false">
+            <h3>The Dark Knight (2008) <span class="genre-tag">Action/Crime</span></h3>
+            <img src="https://source.unsplash.com/800x1200/?dark-knight,movie" class="movie-poster" alt="Dark Knight Poster">
+            <p><strong>Summary:</strong> Batman faces his greatest challenge in the form of the anarchic Joker.</p>
+            <div class="review-text">
+                <h4>Review:</h4>
+                <p>Ledger's iconic performance elevates this superhero film into a crime epic. A perfect balance of action and psychological depth.</p>
+            </div>
+        </div>
+
+        <!-- Movie 4 -->
+        <div class="ui-corner-all movie-card" data-role="collapsible" data-inset="false">
+            <h3>Interstellar (2014) <span class="genre-tag">Sci-Fi/Adventure</span></h3>
+            <img src="https://source.unsplash.com/800x1200/?interstellar,movie" class="movie-poster" alt="Interstellar Poster">
+            <p><strong>Summary:</strong> Explorers travel through a wormhole in search of a new home for humanity.</p>
+            <div class="review-text">
+                <h4>Review:</h4>
+                <p>Visually stunning with emotional depth. The scientific accuracy combined with human drama makes it unforgettable.</p>
+            </div>
+        </div>
+
+        <!-- Movie 5 -->
+        <div class="ui-corner-all movie-card" data-role="collapsible" data-inset="false">
+            <h3>La La Land (2016) <span class="genre-tag">Musical/Romance</span></h3>
+            <img src="https://source.unsplash.com/800x1200/?la-la-land,movie" class="movie-poster" alt="La La Land Poster">
+            <p><strong>Summary:</strong> A jazz pianist and aspiring actress navigate love and career in Los Angeles.</p>
+            <div class="review-text">
+                <h4>Review:</h4>
+                <p>A vibrant, modern musical with stunning cinematography and memorable performances. The ending will stay with you long after credits roll.</p>
+            </div>
+        </div>
+    </div>
+
+    <div data-role="footer" class="ui-footer">
+        <h4>© 2023 Movie Reviews</h4>
+    </div>
+</div>
+
+</body>
+</html>

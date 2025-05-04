@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <style>
+        .profile-img { 
+            width: 150px; 
+            height: 150px; 
+            border-radius: 50%;
+            margin: 20px auto;
+            border: 3px solid #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+        .skill-bar { 
+            background: #e0e0e0; 
+            border-radius: 10px;
+            margin: 10px 0;
+        }
+        .skill-progress {
+            height: 20px;
+            border-radius: 10px;
+            background: #4CAF50;
+        }
+        .project-card {
+            margin: 15px 0;
+            padding: 10px;
+            border-radius: 8px;
+            background: #f5f5f5;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Home/About Page -->
+<div data-role="page" id="home">
+    <div data-role="header" data-theme="b">
+        <h1>John Doe</h1>
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#home" class="ui-btn-active">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div data-role="main" class="ui-content">
+        <img src="https://source.unsplash.com/150x150/?portrait" class="profile-img" alt="Profile Photo">
+        <h2>About Me</h2>
+        <p>Full-stack developer with 5+ years of experience building web applications. Passionate about clean code and user-centric design.</p>
+        
+        <div data-role="collapsible">
+            <h3>Education</h3>
+            <ul data-role="listview">
+                <li>B.S. in Computer Science - XYZ University</li>
+                <li>Certified AWS Developer</li>
+            </ul>
+        </div>
+    </div>
+
+    <div data-role="footer" data-theme="b">
+        <h4>© 2023 John Doe</h4>
+    </div>
+</div>
+
+<!-- Projects Page -->
+<div data-role="page" id="projects">
+    <div data-role="header" data-theme="b">
+        <a href="#home" class="ui-btn ui-icon-home ui-btn-icon-left">Home</a>
+        <h1>My Projects</h1>
+    </div>
+
+    <div data-role="main" class="ui-content">
+        <div class="project-card">
+            <h3>E-Commerce Platform</h3>
+            <img src="https://source.unsplash.com/800x450/?ecommerce" style="width:100%" alt="Project 1">
+            <p>Built with React & Node.js, handling 10k+ monthly transactions</p>
+        </div>
+
+        <div class="project-card">
+            <h3>Task Management App</h3>
+            <img src="https://source.unsplash.com/800x450/?tasks" style="width:100%" alt="Project 2">
+            <p>Mobile-first productivity tool with real-time collaboration</p>
+        </div>
+    </div>
+</div>
+
+<!-- Skills Page -->
+<div data-role="page" id="skills">
+    <div data-role="header" data-theme="b">
+        <a href="#home" class="ui-btn ui-icon-home ui-btn-icon-left">Home</a>
+        <h1>Technical Skills</h1>
+    </div>
+
+    <div data-role="main" class="ui-content">
+        <div class="ui-grid-a">
+            <div class="ui-block-a">
+                <h3>Frontend</h3>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="width: 90%">HTML/CSS</div>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="width: 85%">JavaScript</div>
+                </div>
+            </div>
+            
+            <div class="ui-block-b">
+                <h3>Backend</h3>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="width: 80%">Node.js</div>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="width: 75%">Python</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Contact Page -->
+<div data-role="page" id="contact">
+    <div data-role="header" data-theme="b">
+        <a href="#home" class="ui-btn ui-icon-home ui-btn-icon-left">Home</a>
+        <h1>Contact Me</h1>
+    </div>
+
+    <div data-role="main" class="ui-content">
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name">
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email">
+            
+            <label for="message">Message:</label>
+            <textarea id="message"></textarea>
+            
+            <button class="ui-btn ui-btn-b">Send Message</button>
+        </form>
+        
+        <div data-role="collapsible">
+            <h3>Direct Contact</h3>
+            <ul data-role="listview">
+                <li>Email: john@example.com</li>
+                <li>Phone: (555) 123-4567</li>
+                <li>LinkedIn: linkedin.com/in/johndoe</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PICT - Pune Institute of Computer Technology</title>
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <style>
+        .pict-logo { max-width: 150px; margin: 10px auto; }
+        .ui-footer { text-align: center; }
+    </style>
+</head>
+<body>
+
+<!-- Home Page -->
+<div data-role="page" id="home">
+    <div data-role="header">
+        <img src="https://pict.edu/images/pict_logo.png" alt="PICT Logo" class="pict-logo">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#home" data-transition="slide" class="ui-btn-active">About</a></li>
+                <li><a href="#courses" data-transition="slide">Courses</a></li>
+                <li><a href="#depts" data-transition="slide">Departments</a></li>
+                <li><a href="#contact" data-transition="slide">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div data-role="main" class="ui-content">
+        <h2>Welcome to PICT</h2>
+        <p>Established in 1983, Pune Institute of Computer Technology (PICT) is a premier engineering institute in Maharashtra.</p>
+        
+        <div data-role="collapsible">
+            <h3>Vision & Mission</h3>
+            <p>To be a center of excellence in technical education and research in Information Technology...</p>
+        </div>
+    </div>
+
+    <div data-role="footer" class="ui-footer">
+        <h4>© 2023 PICT. All rights reserved</h4>
+    </div>
+</div>
+
+<!-- Courses Page -->
+<div data-role="page" id="courses">
+    <div data-role="header">
+        <a href="#home" data-transition="slide" class="ui-btn ui-icon-home ui-btn-icon-left">Home</a>
+        <h1>Courses Offered</h1>
+    </div>
+
+    <div data-role="main" class="ui-content">
+        <div data-role="collapsible">
+            <h3>Undergraduate Programs</h3>
+            <ul data-role="listview">
+                <li>B.E. Computer Engineering</li>
+                <li>B.E. Information Technology</li>
+                <li>B.E. Electronics & Telecommunication</li>
+            </ul>
+        </div>
+
+        <div data-role="collapsible">
+            <h3>Postgraduate Programs</h3>
+            <ul data-role="listview">
+                <li>M.E. Computer Engineering</li>
+                <li>M.E. Information Technology</li>
+                <li>MBA in Technology Management</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Departments Page -->
+<div data-role="page" id="depts">
+    <div data-role="header">
+        <a href="#home" data-transition="slide" class="ui-btn ui-icon-home ui-btn-icon-left">Home</a>
+        <h1>Departments</h1>
+    </div>
+
+    <div data-role="main" class="ui-content">
+        <div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+            <h3>Computer Engineering</h3>
+            <p>Established in 1983, the Computer Engineering department offers state-of-the-art facilities...</p>
+        </div>
+
+        <div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+            <h3>Information Technology</h3>
+            <p>The IT department focuses on emerging technologies like AI, ML, and Data Science...</p>
+        </div>
+    </div>
+</div>
+
+<!-- Contact Page -->
+<div data-role="page" id="contact">
+    <div data-role="header">
+        <a href="#home" data-transition="slide" class="ui-btn ui-icon-home ui-btn-icon-left">Home</a>
+        <h1>Contact Us</h1>
+    </div>
+
+    <div data-role="main" class="ui-content">
+        <div class="ui-bar ui-bar-a">
+            <h3>Pune Institute of Computer Technology</h3>
+        </div>
+        
+        <div class="ui-body">
+            <p>Survey No. 27, Near Trimurti Chowk,<br>
+               Dhankawadi, Pune - 411043<br>
+               Phone: +91-20-24371101<br>
+               Email: pict@pict.edu</p>
+        </div>
+        
+        <div data-role="collapsible">
+            <h3>Location Map</h3>
+            <iframe src="https://maps.google.com/maps?q=pict+pune&output=embed" 
+                    width="100%" 
+                    height="300" 
+                    frameborder="0" 
+                    style="border:0"></iframe>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

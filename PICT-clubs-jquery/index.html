@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PICT Student Clubs</title>
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <style>
+        .club-img {
+            max-width: 100%;
+            height: auto;
+            margin: 10px 0;
+        }
+        .achievement-list {
+            margin-left: 20px;
+        }
+        .ui-header .ui-title {
+            margin-right: 0;
+            margin-left: 0;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Clubs Home Page -->
+<div data-role="page" id="home">
+    <div data-role="header">
+        <img src="https://pict.edu/images/pict_logo.png" alt="PICT Logo" class="club-img">
+        <h1>Student Clubs & Activities</h1>
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#home" class="ui-btn-active">All Clubs</a></li>
+                <li><a href="#tech">Tech Clubs</a></li>
+                <li><a href="#cultural">Cultural</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div data-role="main" class="ui-content">
+        <h2>Active Student Clubs</h2>
+        
+        <!-- Coding Club -->
+        <div data-role="collapsible" data-inset="false">
+            <h3>Coding Club</h3>
+            <img src="https://source.unsplash.com/800x450/?coding,programming" class="club-img" alt="Coding Club">
+            <p><strong>Description:</strong> Platform for coding enthusiasts to practice, compete, and develop projects.</p>
+            <div class="achievement-list">
+                <h4>Achievements:</h4>
+                <ul data-role="listview">
+                    <li>Winners of Smart India Hackathon 2022</li>
+                    <li>100+ Leetcode problems solved collectively</li>
+                    <li>Developed campus navigation app</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Robotics Club -->
+        <div data-role="collapsible" data-inset="false">
+            <h3>Robotics Club</h3>
+            <img src="https://source.unsplash.com/800x450/?robotics,technology" class="club-img" alt="Robotics Club">
+            <p><strong>Description:</strong> Design and build innovative robotics solutions for real-world problems.</p>
+            <div class="achievement-list">
+                <h4>Achievements:</h4>
+                <ul data-role="listview">
+                    <li>National runners-up in ABU Robocon 2023</li>
+                    <li>Developed automated campus delivery bot</li>
+                    <li>Patent for agricultural drone design</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Dance Club -->
+        <div data-role="collapsible" data-inset="false">
+            <h3>Dance Club</h3>
+            <img src="https://source.unsplash.com/800x450/?dance,performance" class="club-img" alt="Dance Club">
+            <p><strong>Description:</strong> Explore various dance forms and perform at cultural events.</p>
+            <div class="achievement-list">
+                <h4>Achievements:</h4>
+                <ul data-role="listview">
+                    <li>Winners of Inter-college Folk Dance Competition</li>
+                    <li>Annual cultural fest performances</li>
+                    <li>Collaboration with professional dance troupes</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <div data-role="footer" class="ui-footer">
+        <h4>© 2023 PICT Student Activities Council</h4>
+    </div>
+</div>
+
+<!-- Tech Clubs Page -->
+<div data-role="page" id="tech">
+    <div data-role="header">
+        <img src="https://pict.edu/images/pict_logo.png" alt="PICT Logo" class="club-img">
+        <h1>Tech Clubs</h1>
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#home">All Clubs</a></li>
+                <li><a href="#tech" class="ui-btn-active">Tech Clubs</a></li>
+                <li><a href="#cultural">Cultural</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div data-role="main" class="ui-content">
+        <h2>Active Tech Clubs</h2>
+
+        <!-- Coding Club (Example) -->
+        <div data-role="collapsible" data-inset="false">
+            <h3>Coding Club</h3>
+            <img src="https://source.unsplash.com/800x450/?coding,programming" class="club-img" alt="Coding Club">
+            <p><strong>Description:</strong> Platform for coding enthusiasts to practice, compete, and develop projects.</p>
+            <div class="achievement-list">
+                <h4>Achievements:</h4>
+                <ul data-role="listview">
+                    <li>Winners of Smart India Hackathon 2022</li>
+                    <li>100+ Leetcode problems solved collectively</li>
+                    <li>Developed campus navigation app</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div data-role="footer" class="ui-footer">
+        <h4>© 2023 PICT Student Activities Council</h4>
+    </div>
+</div>
+
+<!-- Cultural Clubs Page -->
+<div data-role="page" id="cultural">
+    <div data-role="header">
+        <img src="https://pict.edu/images/pict_logo.png" alt="PICT Logo" class="club-img">
+        <h1>Cultural Clubs</h1>
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#home">All Clubs</a></li>
+                <li><a href="#tech">Tech Clubs</a></li>
+                <li><a href="#cultural" class="ui-btn-active">Cultural</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div data-role="main" class="ui-content">
+        <h2>Active Cultural Clubs</h2>
+
+        <!-- Dance Club (Example) -->
+        <div data-role="collapsible" data-inset="false">
+            <h3>Dance Club</h3>
+            <img src="https://source.unsplash.com/800x450/?dance,performance" class="club-img" alt="Dance Club">
+            <p><strong>Description:</strong> Explore various dance forms and perform at cultural events.</p>
+            <div class="achievement-list">
+                <h4>Achievements:</h4>
+                <ul data-role="listview">
+                    <li>Winners of Inter-college Folk Dance Competition</li>
+                    <li>Annual cultural fest performances</li>
+                    <li>Collaboration with professional dance troupes</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div data-role="footer" class="ui-footer">
+        <h4>© 2023 PICT Student Activities Council</h4>
+    </div>
+</div>
+
+<!-- <script>
+    $(document).on("pagebeforechange", function(event, data) {
+        var pageId = data.toPage[0].id;
+        $(".ui-navbar .ui-btn").removeClass("ui-btn-active");
+        $("#" + pageId + "-nav").addClass("ui-btn-active");
+    });
+</script> -->
+
+</body>
+</html>

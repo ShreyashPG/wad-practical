@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PICT B.E. Course Structure</title>
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <style>
+        .pict-header {
+            background: #002147;
+            color: white;
+            text-align: center;
+        }
+        .course-year {
+            margin: 10px 0;
+            border-radius: 8px;
+        }
+        .subject-list {
+            margin-left: 20px;
+        }
+        .ui-collapsible-heading-toggle {
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+
+<div data-role="page" id="home">
+    <div data-role="header" class="pict-header">
+        <img src="https://pict.edu/images/pict_logo.png" alt="PICT Logo" style="height:40px; margin:10px auto;">
+        <h1>B.E. Computer Engineering</h1>
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#home" class="ui-btn-active">Course Structure</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div data-role="main" class="ui-content">
+        <!-- First Year -->
+        <div data-role="collapsible" class="course-year" data-collapsed="false">
+            <h3>First Year (FE)</h3>
+            <ul data-role="listview" class="subject-list">
+                <li>
+                    <h4>Engineering Mathematics-I</h4>
+                    <p>Differential calculus, matrices, and numerical methods</p>
+                </li>
+                <li>
+                    <h4>Basic Electrical Engineering</h4>
+                    <p>Fundamentals of DC/AC circuits and electrical machines</p>
+                </li>
+                <li>
+                    <h4>Programming in C</h4>
+                    <p>Structured programming concepts and problem solving</p>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Second Year -->
+        <div data-role="collapsible" class="course-year">
+            <h3>Second Year (SE)</h3>
+            <ul data-role="listview" class="subject-list">
+                <li>
+                    <h4>Data Structures</h4>
+                    <p>Algorithms, trees, graphs, and complexity analysis</p>
+                </li>
+                <li>
+                    <h4>Computer Organization</h4>
+                    <p>CPU architecture, memory hierarchy, and I/O systems</p>
+                </li>
+                <li>
+                    <h4>Discrete Mathematics</h4>
+                    <p>Logic, combinatorics, and graph theory fundamentals</p>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Third Year -->
+        <div data-role="collapsible" class="course-year">
+            <h3>Third Year (TE)</h3>
+            <ul data-role="listview" class="subject-list">
+                <li>
+                    <h4>Operating Systems</h4>
+                    <p>Process management, memory allocation, file systems</p>
+                </li>
+                <li>
+                    <h4>Database Management Systems</h4>
+                    <p>Relational algebra, SQL, and normalization techniques</p>
+                </li>
+                <li>
+                    <h4>Computer Networks</h4>
+                    <p>OSI model, TCP/IP, and network protocols</p>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Final Year -->
+        <div data-role="collapsible" class="course-year">
+            <h3>Final Year (BE)</h3>
+            <ul data-role="listview" class="subject-list">
+                <li>
+                    <h4>Machine Learning</h4>
+                    <p>Supervised/unsupervised learning algorithms</p>
+                </li>
+                <li>
+                    <h4>Cloud Computing</h4>
+                    <p>Virtualization, SaaS, PaaS, and cloud security</p>
+                </li>
+                <li>
+                    <h4>Big Data Analytics</h4>
+                    <p>Hadoop ecosystem and data processing techniques</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div data-role="footer" class="pict-header">
+        <h4>© 2023 PICT. Curriculum Subject to Change</h4>
+    </div>
+</div>
+
+</body>
+</html>

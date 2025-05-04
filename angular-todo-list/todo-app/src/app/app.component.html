@@ -1,0 +1,35 @@
+<!-- app.component.html -->
+<div class="todo-container">
+  <h2>Angular Todo List</h2>
+  
+  <div class="input-section">
+    <input 
+      type="text" 
+      [(ngModel)]="newTask" 
+      placeholder="Enter task..."
+    >
+    <button 
+      *ngIf="!editingTask; else updateButton"
+      (click)="addTask()"
+    >
+      Add Task
+    </button>
+    
+    <ng-template #updateButton>
+      <button (click)="updateTask()">Update</button>
+      <button (click)="cancelEdit()">Cancel</button>
+    </ng-template>
+  </div>
+
+  <ul class="task-list">
+    <li *ngFor="let task of tasks">
+      <span>{{ task.name }}</span>
+      <div class="action-buttons">
+        <button (click)="startEdit(task)">Edit</button>
+        <button (click)="deleteTask(task.id)">Delete</button>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<!-- <router-outlet /> -->
